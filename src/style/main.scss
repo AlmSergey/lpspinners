@@ -155,11 +155,6 @@ body{
 	color: $menubutton;
 }
 
-.content_container {
-	width: 100%;
-	position: relative;
-}
-
 .videobg {
 	top: -120px;
 	position: absolute;
@@ -167,12 +162,11 @@ body{
 }
 
 .header_overlay {
-	height: 100%;
+	height: calc(100% - 97px);
 	width: 100%;
 	position: absolute;
 	background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.83) 10%, transparent 140%);
 	z-index: 1;
-	top: 0;
 }
 
 .header {
