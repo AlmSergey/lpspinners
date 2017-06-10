@@ -79,6 +79,7 @@ body{
 
 /* Header */
 
+
 .menu-burger {
 	display: none;
 }
@@ -117,6 +118,7 @@ body{
 	text-transform: uppercase;
 	text-decoration: none;
 	opacity: 0.8;
+	font-size: .857rem;
 }
 
 .menu-holder li {
@@ -151,10 +153,27 @@ body{
 	color: $menubutton;
 }
 
+.content_container {
+	width: 100%;
+	position: relative;
+}
+
 .videobg {
 	top: -120px;
-	position: relative;
+	position: absolute;
 	z-index: -1;
+}
+
+.header_overlay {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.83) 10%, transparent 140%);
+	z-index: 1;
+}
+
+.header {
+	position: relative;
 }
 
 /* Products */
@@ -408,3 +427,28 @@ body{
 }
 
 
+/* Indent section */
+
+.utp2 {
+	height: 715px;
+	width: 100%;
+	background: url(../img/Indent_bg.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;;
+	padding-top: 80px;
+	padding-bottom: 75px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.utp2_overlay {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(to bottom, #0e1428 0%, rgba(14,20,40,0.72) 66%, transparent 140%);
+}
+
+.utp2-heading {
+
+}
