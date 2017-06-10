@@ -94,6 +94,8 @@ body{
 	background-color: $headerbg;
 	padding: 10px 50px;
 	box-sizing: border-box;
+	position: relative;
+	z-index: 4;
 }
 
 .logo-holder {
@@ -170,10 +172,13 @@ body{
 	position: absolute;
 	background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.83) 10%, transparent 140%);
 	z-index: 1;
+	top: 0;
 }
 
 .header {
+	height: 100vh;
 	position: relative;
+	overflow: hidden;
 }
 
 /* Products */
@@ -346,7 +351,83 @@ body{
 			font-weight: 700;
 			line-height: 1.857;
 			letter-spacing: .3px;
+			margin: 0;
 		}
+	}
+}
+
+/* UTP section */
+
+.utp-holder {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 30px;
+}
+
+.utp-block {
+	width: 33.33333333%;
+	padding: 0 10px;
+	box-sizing: border-box;
+	text-align: center;
+	position: relative;
+
+	@include respond-to(tablets){
+		width:100%;
+		max-width: 400px;
+		margin: 0 auto 10px;
+
+		&:last-of-type{
+			margin: 0 auto 0;
+		}
+	}
+
+	&:after {
+		content: '';
+		width: calc(100% - 90px);
+		height: 1px;
+		position: absolute;
+		top: 45px;
+		left: calc(50% - -45px);
+		background-color: $decorbg;
+
+		@include respond-to(tablets){
+			display: none;
+		}
+	}
+
+	&:last-of-type:after{
+		display: none;
+	}
+
+	&_img {
+		margin: 0 auto 10px;
+		padding: 20px;
+	}
+
+	img {
+		width: 50px;
+		height: 50px;
+	}
+
+	span {
+		font-weight: 700;
+		font-size: .857rem;
+		line-height: 1.333;
+		letter-spacing: 1.2px;
+		text-transform: uppercase;
+		display: block;
+		max-width: 280px;
+		margin: 0 auto;
+	}
+
+	p {
+		font-size: 1rem;
+		margin: 20px auto 0;
+		line-height: 1.857;
+		letter-spacing: .3px;
+		color: rgba(33,33,33,0.8);
+
 	}
 }
 
