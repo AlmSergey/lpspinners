@@ -96,15 +96,20 @@ body{
 }
 
 .logo-holder {
-	background: url(../img/logo.png);
+	background: url(../img/logo.png) no-repeat;
 	background-size: contain;
 	height: 77px;
-	width: 120px;
+	width: 100px;
 	float: left;
+	flex-shrink: 0;
 }
 
 .menu-holder ul:hover li{
 	opacity: 0.5;
+}
+
+.menu-holder ul {
+	padding-left: 0;
 }
 
 .menu-holder a {
