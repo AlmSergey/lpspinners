@@ -19,6 +19,8 @@ $menutext: #fff;
 $menubutton: #fff55a;
 $decorbg: #000;
 $text: #222;
+$textinvert: #fff;
+$sectionbg: #000;
 
 /* Mixins */
 @mixin respond-to($media) {
@@ -26,7 +28,7 @@ $text: #222;
 		@media screen and (max-width: 768px) { @content; }
 	}
 	@else if $media == largetablets {
-		@media all and (max-width: 1000px) { @content; }
+		@media all and (max-width: 1024px) { @content; }
 	}
 	@else if $media == largephone {
 		@media all and (max-width: 480px) { @content; }
@@ -53,6 +55,10 @@ body{
 	margin: 0 auto;
 	width: 100%;
 
+	@include respond-to(largetablets) {
+		max-width: 980px;
+	}
+
 	@include respond-to(tablets) {
 		max-width: 750px;
 	}
@@ -64,6 +70,10 @@ body{
 	@include respond-to(smallphone) {
 		max-width: 300px;
 	}
+}
+
+.indents {
+	padding: 70px 0;
 }
 
 
@@ -140,8 +150,6 @@ body{
 /* Products */
 
 .products {
-	padding: 70px 0;
-
 	header {
 		padding: 0 20px;
 	}
@@ -252,4 +260,65 @@ body{
 		top: 20px;
 	}
 }
+
+
+/* About Section */
+.about {
+	background-color: $sectionbg;
+	font-size: 0;
+	text-align: center;
+
+
+	&_gif {
+		background: url(../img/hand-spinner.gif) no-repeat;
+		display: inline-block;
+		height: 300px;
+		background-size: contain;
+		vertical-align: top;
+		width: 100%;
+		max-width: 390px;
+
+		@include respond-to(largetablets) {
+			width: 50%;
+		}
+
+		@include respond-to(tablets) {
+			width: 100%;
+			max-width: none;
+			background-position: center;
+		}
+
+		@include respond-to(largephone) {
+			height: 200px;
+		}
+	}
+
+	&_desc {
+		display: inline-block;
+		vertical-align: top;
+		color: $textinvert;
+		padding: 0 20px;
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 525px;
+
+		@include respond-to(largetablets) {
+			width: 50%;
+		}
+
+		@include respond-to(tablets) {
+			width: 100%;
+			margin-top: 40px;
+			max-width: none;
+		}
+
+		& > p {
+			font-size: 1rem;
+			font-weight: 700;
+			line-height: 1.857;
+			letter-spacing: .3px;
+		}
+	}
+}
+
 
