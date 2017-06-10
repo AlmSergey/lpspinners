@@ -151,6 +151,11 @@ body{
 	color: $menubutton;
 }
 
+.videobg {
+	top: -120px;
+	position: relative;
+	z-index: -1;
+}
 
 /* Products */
 
