@@ -7,10 +7,18 @@
 * Custom
 */
 
+/* Fonts*/
+@font-face {
+	font-family: Comfortaa;
+	src: url(fonts/Comfortaa-Regular.ttf);
+}
+
 /*Colors*/
 
 /*Common Styles*/
-
+body{
+	font-family: Comfortaa, Helvetica, Verdana, sans-serif;
+}
 
 
 /* Header */
