@@ -37,9 +37,55 @@
 	    	</a>
    		</div> 	
     </div>
+
 	<div class="overlay_gradient"></div>
+
+	<div id="player" class="videobg"></div>
+	<script>
+        // 2. This code loads the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // 3. This function creates an <iframe> (and YouTube player)
+        //    after the API code downloads.
+        var player;
+        function onYouTubeIframeAPIReady() {
+            var height = window.innerWidth / 16 * 9;
+            player = new YT.Player('player', {
+                height: height,
+                width: '100%',
+                playerVars: {
+                    controls: 0,
+                    showinfo: 0,
+                    iv_load_policy: 3,
+                    rel: 0,
+                    autoplay: 1,
+                    modestbranding: 1,
+					hd: 1,
+                    branding: 0,
+                    autohide: 1,
+					loop: 1,
+                    playlist: 'ylN_btHE_zo'
+                },
+            	videoId: 'ylN_btHE_zo',
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+            event.target.mute();
+        }
+
+	</script>
+
 </section>
-<section class="products wrapper">
+<section class="products wrapper indents">
 	<header>
 		<div class="sect-heading">Теперь ты в теме!</div>
 		<p class="sect-desc">Лучший подарок 2017 года. Скоро во всех городах мира. будь первым. закажи сейчас!</p>
@@ -158,6 +204,18 @@
 				<button>Заказать</button>
 				<div class="product_price">499 ₽</div>
 			</div>
+		</div>
+	</div>
+</section>
+<section class="about indents">
+	<div class="wrapper">
+		<div class="about_gif"></div>
+		<div class="about_desc">
+			<header>
+				<div class="sect-heading">Что такое спиннер?</div>
+				<p class="sect-desc">Эта вертушка очень понравится любому кинестетику и любителю «пощелкать ручкой», помогает развивать моторику пальцев рук, концентрирует внимание.</p>
+			</header>
+			<p>Спиннерами называют небольшие, игрушки-вертушки, fidget toys, предназначенные для того, чтобы просто вращать их в руке. Функционал их не особо велик, но для любителей вертеть и трогать разные предметы они просто незаменимы.    </p>
 		</div>
 	</div>
 </section>
