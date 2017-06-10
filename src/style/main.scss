@@ -21,7 +21,7 @@ $text: #222;
 /* Mixins */
 @mixin respond-to($media) {
 	@if $media == tablets {
-		@media all and (max-width: 768px) { @content; }
+		@media screen and (max-width: 768px) { @content; }
 	}
 	@else if $media == largephone {
 		@media all and (max-width: 480px) { @content; }
@@ -39,11 +39,25 @@ html {
 body{
 	font-family: Comfortaa, Helvetica, Verdana, sans-serif;
 	color: $text;
+	width: 100%;
 }
 
 .wrapper {
-	width: 1140px;
+	max-width: 1140px;
 	margin: 0 auto;
+	width: 100%;
+
+	@include respond-to(tablets) {
+		max-width: 750px;
+	}
+
+	@include respond-to(largephone) {
+		max-width: 400px;
+	}
+
+	@include respond-to(smallphone) {
+		max-width: 300px;
+	}
 }
 
 
@@ -77,12 +91,27 @@ body{
 .products {
 	padding: 70px 0;
 
+	header {
+		padding: 0 20px;
+	}
 }
 
 .product{
 	width: 33.3333333333%;
 	padding: 40px;
 	box-sizing: border-box;
+
+	@include respond-to(tablets) {
+		width: 50%;
+	}
+
+	@include respond-to(largephone) {
+		width: 100%;
+	}
+
+	@include respond-to(smallphone) {
+		padding: 20px;
+	}
 
 	&_img-holder {
 		transition: transform .5s ease;
