@@ -15,6 +15,8 @@
 
 /*Colors*/
 $headerbg: #000;
+$menutext: #fff;
+$menubutton: #fff55a;
 
 /*Common Styles*/
 body{
@@ -24,15 +26,20 @@ body{
 
 /* Header */
 
+.menu-burger {
+	display: none;
+}
 
 .menu {
 	display: flex;
 	height: 97px;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: space-between;
 	background-color: $headerbg;
+	padding: 10px 50px;
+	box-sizing: border-box;
 }
 
 .logo-holder {
@@ -40,8 +47,47 @@ body{
 	background-size: contain;
 	height: 77px;
 	width: 120px;
+	float: left;
+}
+
+.menu-holder ul:hover li{
+	opacity: 0.5;
+}
+
+.menu-holder a {
+	color: $menutext;
+	text-transform: uppercase;
+	text-decoration: none;
+	opacity: 0.8;
 }
 
 .menu-holder li {
 	display: inline-block;
+	padding: 0 25px;
+	transition: opacity .5s ease;
+}
+
+.menu-holder li:hover {
+	opacity: 1 !important;
+}
+
+.menu-button {
+	height: 42px;
+	width: 173px;
+	color: $menubutton;
+	border: 1px solid currentColor;
+	text-align: center;
+	padding-top: 13.5px;
+	box-sizing: border-box;
+}
+
+.menu-button a {
+	display: block;
+	height: 100%;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+.menu-button span {
+	color: $menubutton;
 }
