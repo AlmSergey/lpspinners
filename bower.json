@@ -1,0 +1,21 @@
+{
+  "name": "wave-fe",
+  "description": "front-end for wave.com.ua",
+  "main": "index.js",
+  "authors": [
+    "MaHBe <ilyxi4@mail.ru>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^7.0.0",
+    "jQuery": "^3.2.1"
+  }
+}
