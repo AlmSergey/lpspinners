@@ -16,6 +16,20 @@
 /*Colors*/
 $headerbg: #000;
 $decorbg: #000;
+$text: #222;
+
+/* Mixins */
+@mixin respond-to($media) {
+	@if $media == tablets {
+		@media all and (max-width: 768px) { @content; }
+	}
+	@else if $media == largephone {
+		@media all and (max-width: 480px) { @content; }
+	}
+	@else if $media == smallphone {
+		@media all and (max-width: 320px) { @content; }
+	}
+}
 
 /*Common Styles*/
 html {
@@ -24,6 +38,7 @@ html {
 
 body{
 	font-family: Comfortaa, Helvetica, Verdana, sans-serif;
+	color: $text;
 }
 
 .wrapper {
@@ -61,6 +76,73 @@ body{
 
 .products {
 	padding: 70px 0;
+
+}
+
+.product{
+	width: 33.3333333333%;
+	padding: 40px;
+	box-sizing: border-box;
+
+	&_img-holder {
+		transition: transform .5s ease;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		&:hover {
+			transform: scale(1.1);
+		}
+
+	}
+
+	h4 {
+		padding-top: 30px;
+		font-weight: 700;
+		letter-spacing: .3px;
+		font-size: 1.143em;
+		line-height: 1.188;
+		margin: 0;
+	}
+
+	p {
+		opacity: .75;
+		margin:20px 0 10px;
+		font-size: .929rem;
+		line-height: 1.692;
+	}
+
+	&_buy-holder {
+		margin-top: 15px;
+
+		button{
+			background-color: transparent;
+			border: 1px solid $decorbg;
+			padding: 12px 28px;
+			border-radius: 50px;
+			font: inherit;
+			outline: none;
+			cursor: pointer;
+			margin: 10px 0;
+		}
+	}
+
+	&_price {
+		float: right;
+		font-weight: 700;
+		letter-spacing: .3px;
+		font-size: 1.143em;
+		line-height: 1.188;
+		margin-top: 23px;
+	}
+}
+
+.products-holder {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .sect-heading {
