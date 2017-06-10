@@ -8,14 +8,32 @@
 */
 
 /*Colors*/
+$headerbg: #000;
 
 /*Common Styles*/
 
 
 
 /* Header */
-.header {
-	
-	display: flex;
 
+
+.menu {
+	display: flex;
+	height: 97px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	background-color: $headerbg;
+}
+
+.logo-holder {
+	background: url(../img/logo.png);
+	background-size: contain;
+	height: 77px;
+	width: 120px;
+}
+
+.menu-holder li {
+	display: inline-block;
 }
