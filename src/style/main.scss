@@ -356,23 +356,71 @@ body{
 .utp2 {
 	height: 715px;
 	width: 100%;
-	background: url(../img/Indent_bg.jpg) no-repeat;
+	background: url(../img/utp2_bg.jpg) no-repeat;
 	background-size: cover;
 	background-position: center;;
 	padding-top: 80px;
 	padding-bottom: 75px;
 	position: relative;
 	box-sizing: border-box;
-}
+	text-align: center;
+	color: $menutext;
+	
 
-.utp2_overlay {
-	position: absolute;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background: linear-gradient(to bottom, #0e1428 0%, rgba(14,20,40,0.72) 66%, transparent 140%);
+	&_overlay {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(to bottom, #0e1428 0%, rgba(14,20,40,0.72) 66%, transparent 140%);
+	}
+	
+	.wrapper {
+		position: relative;
+	}
 }
 
 .utp2-heading {
+	font-size: 2.88rem;
+}
 
+.utp2-desc {
+	font-size: 1.071rem;
+	text-transform: uppercase;
+
+	&:after {
+		content: '';
+		display: block;
+		margin: 0 auto;
+		width: 30px;
+		height: 2px;
+		background: $menutext;
+		position: relative;
+		top: 20px;
+	}
+}
+
+.utp2-textlist-holder {
+	max-width: 660px;
+	margin: 0 auto;
+	padding-top: 50px;
+	text-align: left;
+}
+
+.textlist {
+	margin-top: 30px;
+	padding: 0 20px;
+}
+
+.textlist span {
+	text-transform: uppercase;
+	font-size: 1.143rem;
+	font-weight: 700;
+}
+
+.textlist p {
+	text-align: justify;
+	font-weight: 300;
+	line-height: 1.5;
+	color: rgba(255,255,255,0.8);
 }
