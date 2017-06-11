@@ -4,6 +4,11 @@
 //= ../../bower_components/jquery/dist/jquery.js
 //= ../../bower_components/slick-carousel/slick/slick.js
 
+/*
+ * jQuery vendor plugins
+ */
+//= ./vendor/jquery.fancybox.js
+//= ../../bower_components/jquery.maskedinput/dist/jquery.maskedinput.js
 
 /*
  * Custom
@@ -51,6 +56,7 @@ function onPlayerReady(event) {
 
 
 $( document ).ready(function() {
+
     var menuDisplayPoint = 700;
     var menuFiller = $(".menu-filler");
     var menu = $("#menu");
@@ -74,8 +80,6 @@ $( document ).ready(function() {
 
             menu.css("top", -menu.outerHeight());
         }
-
-
     });
 
 
@@ -84,4 +88,49 @@ $( document ).ready(function() {
         prevArrow: '<div class="slick-prev"></div>',
         nextArrow: '<div class="slick-next"></div>'
     });
+
+
+
+    $.fancybox.defaults.buttons = [
+        'thumbs',
+        'close'
+    ];
+
+
+    $('#callbackSend').click(function() {
+        var fields = {
+            phone: $('#callbackPhone').val(),
+            name: $('#callbackName').val()
+        };
+
+        var error = false;
+
+        console.log(fields.phone);
+        console.log(fields.name);
+
+        if( fields.phone === '') {
+            $('#callbackPhone').addClass('error');
+            error = true;
+        }
+
+        if( fields.name === '') {
+            $('#callbackName').addClass('error');
+            error = true;
+        }
+
+        if (!error) {
+            jQuery.ajax({
+                url: '../callback.php',
+                data: fields,
+                success: function (data) {
+                    $(".callbackFbox_succes").show();
+                }
+            });
+        }
+
+
+    });
+
+
+    $("input[type=phone]").mask('+38(999)999-99-99',{placeholder:"+38(___)___-__-__"});
 });

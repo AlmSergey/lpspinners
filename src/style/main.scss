@@ -5,6 +5,11 @@
 @import "bower_components/slick-carousel/slick/slick.css";
 
 /*
+ * jQuery vendor plugins
+ */
+@import "src/style/vendor/jquery.fancybox.css";
+
+/*
 * Custom
 */
 
@@ -22,6 +27,7 @@ $decorbg: #000;
 $text: #222;
 $textinvert: #fff;
 $sectionbg: #000;
+$modal: #191919;
 $utp3text: #212121;
 
 /* Mixins */
@@ -107,9 +113,104 @@ section header {
 	background: linear-gradient(to bottom, #0e1428 0%, rgba(14,20,40,0.72) 66%, transparent 140%);
 }
 
+/* Modals */
+.modal {
+	border-radius: 20px;
+	color: $modal;
+	padding: 30px;
+}
+
+.modal-heading {
+	font-size: 1.071rem;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	line-height: 1.4;
+}
+
+.modal-fields {
+	padding: 0 0 20px;
+
+	input {
+		display: block;
+		border: none;
+		border-bottom: 1px solid $modal;
+		outline: none;
+		height: 46px;
+		padding: 10px 25px 10px 0;
+		width: 100%;
+		box-sizing: border-box;
+		margin: 20px 0;
+		font-family: inherit;
+
+		&.error{
+			border-bottom: 1px solid red;
+			&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+				color: red;
+			}
+			&::-moz-placeholder { /* Firefox 19+ */
+				color: red;
+			}
+			&:-ms-input-placeholder { /* IE 10+ */
+				color: red;
+			}
+			&:-moz-placeholder { /* Firefox 18- */
+				color: red;
+			}
+		}
+	}
+}
+
+.modal-button {
+	background-color: transparent;
+	border: 1px solid $modal;
+	border-radius: 50px;
+	padding: 14px 30px;
+	font-family: inherit;
+	outline: none;
+	cursor: pointer;
+}
+
+.callbackFbox {
+	max-width: 300px;
+	position: relative;
+
+	&_succes{
+		display: none;
+		width:100%;
+		height: 100%;
+		position: absolute;
+		text-align: center;
+		background-color: #fff;
+		top: 0;
+		left:0;
+
+		&_heading {
+			font-weight: 700;
+		}
+
+		&-holder{
+			font-size: 1.4rem;
+			height: 138px;
+			top: calc(50% - 69px);
+			position: relative;
+
+			p {
+				font-size: 1.2rem;
+				line-height: 1.5;
+			}
+		}
+	}
+
+	.modal-heading {
+		text-align: center;
+	}
+
+	.modal-button {
+		width: 100%;
+	}
+}
+
 /* Header */
-
-
 .menu-burger {
 	display: none;
 }
@@ -183,8 +284,9 @@ section header {
 	color: $menubutton;
 	border: 1px solid currentColor;
 	text-align: center;
-	padding-top: 13.5px;
+	line-height: 42px;
 	box-sizing: border-box;
+
 }
 
 
@@ -193,6 +295,7 @@ section header {
 	height: 100%;
 	text-decoration: none;
 	box-sizing: border-box;
+	outline: none;
 }
 
 .menu-button span {
@@ -668,6 +771,10 @@ section header {
 .reviews-holder {
 	margin: 50px 0 0;
 	padding: 0 50px;
+	@include respond-to(largephone) {
+		padding: 0 20px;
+		margin: 30px 0 0;
+	}
 }
 
 .review {
@@ -687,13 +794,18 @@ section header {
 		}
 
 		span{
-			padding-left: 15px;
+			padding: 0 0 0 15px;
 			vertical-align: middle;
 			font-weight: 700;
 			font-size: .857rem;
 			line-height: 1.333;
 			letter-spacing: 1.2px;
 			text-transform: uppercase;
+
+			@include respond-to(largephone) {
+				display: block;
+				padding: 15px 0 0 0;
+			}
 		}
 	}
 
@@ -701,6 +813,10 @@ section header {
 		font-size: 2rem;
 		line-height: 1.8;
 		font-weight: 700;
+
+		@include respond-to(largephone) {
+			font-size: 1.5rem;
+		}
 	}
 }
 
@@ -713,7 +829,13 @@ section header {
 	border-right: 2px solid rgba(255, 255, 255, 0.5);
 	transform: rotate(45deg);
 	right:20px;
-	top: calc(50% - 80px);
+	top: calc(50% - 60px);
+
+	@include respond-to(largephone) {
+		right: 5px;
+		width:20px;
+		height: 20px;
+	}
 }
 
 .slick-prev {
@@ -725,7 +847,13 @@ section header {
 	border-left: 2px solid rgba(255, 255, 255, 0.5);
 	transform: rotate(-45deg);
 	left:20px;
-	top: calc(50% - 80px);
+	top: calc(50% - 60px);
+
+	@include respond-to(largephone) {
+		left: 5px;
+		width:20px;
+		height: 20px;
+	}
 }
 
 /* Section Utp3 */
