@@ -4,6 +4,10 @@
 //= ../../bower_components/jquery/dist/jquery.js
 //= ../../bower_components/slick-carousel/slick/slick.js
 
+/*
+ * jQuery vendor plugins
+ */
+//= ./vendor/jquery.fancybox.js
 
 /*
  * Custom
