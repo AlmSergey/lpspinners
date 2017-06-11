@@ -55,6 +55,7 @@ function onPlayerReady(event) {
 
 
 $( document ).ready(function() {
+
     var menuDisplayPoint = 700;
     var menuFiller = $(".menu-filler");
     var menu = $("#menu");
@@ -78,8 +79,6 @@ $( document ).ready(function() {
 
             menu.css("top", -menu.outerHeight());
         }
-
-
     });
 
 
@@ -95,4 +94,39 @@ $( document ).ready(function() {
         'thumbs',
         'close'
     ];
+
+
+    $('#callbackSend').click(function() {
+        var fields = {
+            phone: $('#callbackPhone').val(),
+            name: $('#callbackName').val()
+        };
+
+        var error = false;
+
+        console.log(fields.phone);
+        console.log(fields.name);
+
+        if( fields.phone === '') {
+            $('#callbackPhone').addClass('error');
+            error = true;
+        }
+
+        if( fields.name === '') {
+            $('#callbackName').addClass('error');
+            error = true;
+        }
+
+        if (!error) {
+            jQuery.ajax({
+                url: '../callback.php',
+                data: fields,
+                success: function (data) {
+                    $(".callbackFbox_succes").show();
+                }
+            });
+        }
+
+
+    });
 });

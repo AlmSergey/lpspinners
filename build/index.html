@@ -341,10 +341,18 @@
 		Заполните форму ниже и наш менеджер перезвонит вам
 	</div>
 	<div class="modal-fields">
-		<input type="text" placeholder="Имя *">
-		<input type="number" placeholder="Номер телефона *">
+		<input id="callbackName" type="text" placeholder="Имя *">
+		<input id="callbackPhone" type="text" placeholder="Номер телефона *">
 	</div>
-	<button class="modal-button">Отправить</button>
+	<button class="modal-button" id="callbackSend">Отправить</button>
+	<div class="callbackFbox_succes">
+		<div class="callbackFbox_succes-holder">
+			<div class="callbackFbox_succes_heading" >
+				Спасибо, <span id="senderName"></span>
+			</div>
+			<p>Ваша заявка будет обработана нашим менеджером в ближайшее время!</p>
+		</div>
+	</div>
 </div>
 <script src="js/main.js"></script>
 </body>
