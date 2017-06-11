@@ -175,6 +175,48 @@ body{
 	overflow: hidden;
 }
 
+.info-holder {
+	height: 78px;
+	position: absolute;
+	right: 25px;
+	z-index: 2;
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: top;
+	padding-top: 10px;
+	color: $menutext;
+	
+	img {
+		display: inline-block;
+		height: 25px;
+		width: 25px;
+		fill: currentColor;
+	}
+
+	.info {
+		padding: 0 25px;
+
+
+
+		span {
+			font-size: 1.07rem;
+			font-weight: 700;
+			line-height: 1.5;
+			letter-spacing: 1.5px;
+
+		}
+
+		p {
+			margin: 0;
+			font-size: .9rem;
+			line-height: 1.2;
+			opacity: .6;
+		}
+	}
+}
+
 /* Products */
 
 .products {
