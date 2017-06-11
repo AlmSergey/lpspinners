@@ -104,7 +104,14 @@ section header {
 	display: none;
 }
 
+.menu-filler {
+	height: 97px;
+	display: none;
+}
+
 .menu {
+	width: 100%;
+	top:0;
 	display: flex;
 	height: 97px;
 	flex-direction: row;
@@ -116,6 +123,8 @@ section header {
 	box-sizing: border-box;
 	position: relative;
 	z-index: 4;
+	transition: top .8s ease;
+	-webkit-backface-visibility: hidden; //stop flickering when transform animating
 }
 
 .logo-holder {
@@ -176,7 +185,7 @@ section header {
 }
 
 .videobg {
-	top: -120px;
+	top: -60px;
 	position: absolute;
 	z-index: -1;
 }
