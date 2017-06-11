@@ -2,6 +2,7 @@
 * Third Party
 */
 @import "bower_components/normalize-css/normalize.css";
+@import "bower_components/slick-carousel/slick/slick.css";
 
 /*
 * Custom
@@ -95,6 +96,14 @@ section header {
 	text-align: justify;
 	font-weight: 300;
 	line-height: 1.5;
+}
+
+.section-overlay {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(to bottom, #0e1428 0%, rgba(14,20,40,0.72) 66%, transparent 140%);
 }
 
 /* Header */
@@ -249,12 +258,15 @@ section header {
 }
 
 .header-desc {
-	position: relative;
+	position: absolute;
 	z-index: 2;
 	text-align: center;
 	width: 100%;
 	max-width: 780px;
-	padding: 70px 0;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	bottom: 67px;
 	color: $menutext;
 
 	h1 {
@@ -546,13 +558,7 @@ section header {
 	color: $menutext;
 	
 
-	&_overlay {
-		position: absolute;
-		top: 0;
-		height: 100%;
-		width: 100%;
-		background: linear-gradient(to bottom, #0e1428 0%, rgba(14,20,40,0.72) 66%, transparent 140%);
-	}
+
 	
 	.wrapper {
 		position: relative;
@@ -626,6 +632,62 @@ section header {
 	img {
 		width: 60px;
 		height: 60px;
+	}
+}
+
+/* Reviews */
+.reviews {
+	background: url("../img/reviews_bg.jpg") no-repeat center;
+	background-size: cover;
+	position: relative;
+	color: $menutext;
+
+	.sect-desc {
+		&:after {
+			display: none;
+		}
+	}
+
+	.wrapper {
+		position: relative;
+	}
+}
+
+.reviews-holder {
+	margin: 50px 0 0;
+	padding: 0 50px;
+}
+
+.review {
+	text-align: center;
+
+	&_author {
+		display: inline-block;
+
+		&_img {
+			border-radius: 50%;
+			width: 75px;
+			height: 75px;
+			overflow: hidden;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		span{
+			padding-left: 15px;
+			vertical-align: middle;
+			font-weight: 700;
+			font-size: .857rem;
+			line-height: 1.333;
+			letter-spacing: 1.2px;
+			text-transform: uppercase;
+		}
+	}
+
+	p{
+		font-size: 2rem;
+		line-height: 1.8;
+		font-weight: 700;
 	}
 }
 
