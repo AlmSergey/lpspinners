@@ -8,6 +8,7 @@
  * jQuery vendor plugins
  */
 //= ./vendor/jquery.fancybox.js
+//= ../../bower_components/jquery.maskedinput/dist/jquery.maskedinput.js
 
 /*
  * Custom
@@ -129,4 +130,7 @@ $( document ).ready(function() {
 
 
     });
+
+
+    $("input[type=phone]").mask('+38(999)999-99-99',{placeholder:"+38(___)___-__-__"});
 });
