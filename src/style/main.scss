@@ -660,6 +660,7 @@ section header {
 
 .review {
 	text-align: center;
+	outline: none;
 
 	&_author {
 		display: inline-block;
@@ -689,5 +690,29 @@ section header {
 		line-height: 1.8;
 		font-weight: 700;
 	}
+}
+
+.slick-next {
+	cursor: pointer;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-top: 2px solid rgba(255, 255, 255, 0.5);
+	border-right: 2px solid rgba(255, 255, 255, 0.5);
+	transform: rotate(45deg);
+	right:20px;
+	top: calc(50% - 80px);
+}
+
+.slick-prev {
+	cursor: pointer;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-top: 2px solid rgba(255, 255, 255, 0.5);
+	border-left: 2px solid rgba(255, 255, 255, 0.5);
+	transform: rotate(-45deg);
+	left:20px;
+	top: calc(50% - 80px);
 }
 

@@ -76,9 +76,12 @@ $( document ).ready(function() {
         }
 
 
-    })
+    });
 
 
 
-    $('#reviews-slider').slick();
+    $('#reviews-slider').slick({
+        prevArrow: '<div class="slick-prev"></div>',
+        nextArrow: '<div class="slick-next"></div>'
+    });
 });
