@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "normalize-css": "^7.0.0",
-    "jQuery": "^3.2.1"
+    "jQuery": "^3.2.1",
+    "slick-carousel": "slick.js#^1.6.0"
   }
 }
