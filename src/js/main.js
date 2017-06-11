@@ -88,4 +88,11 @@ $( document ).ready(function() {
         prevArrow: '<div class="slick-prev"></div>',
         nextArrow: '<div class="slick-next"></div>'
     });
+
+
+
+    $.fancybox.defaults.buttons = [
+        'thumbs',
+        'close'
+    ];
 });

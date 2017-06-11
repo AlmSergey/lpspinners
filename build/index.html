@@ -31,7 +31,7 @@
 	    	</ul>
 	    </div>
 	    <div class="menu-button">
-	    	<a href="#" class="button-holder">
+	    	<a data-fancybox data-options='{"src": "#callbackFbox", "smallBtn" : false}'  href="javascript:;" class="button-holder">
 	    		<div class="btn-text">
 	    			<span>Перезвонить?</span>
 	    		</div>
@@ -336,6 +336,16 @@
 		</div>
 	</div>
 </section>
+<div style="display: none;" id="callbackFbox" class="callbackFbox modal">
+	<div class="modal-heading">
+		Заполните форму ниже и наш менеджер перезвонит вам
+	</div>
+	<div class="modal-fields">
+		<input type="text" placeholder="Имя *">
+		<input type="number" placeholder="Номер телефона *">
+	</div>
+	<button class="modal-button">Отправить</button>
+</div>
 <script src="js/main.js"></script>
 </body>
 </html>

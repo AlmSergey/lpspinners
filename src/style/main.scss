@@ -27,6 +27,7 @@ $decorbg: #000;
 $text: #222;
 $textinvert: #fff;
 $sectionbg: #000;
+$modal: #191919;
 
 /* Mixins */
 @mixin respond-to($media) {
@@ -111,9 +112,60 @@ section header {
 	background: linear-gradient(to bottom, #0e1428 0%, rgba(14,20,40,0.72) 66%, transparent 140%);
 }
 
+/* Modals */
+.modal {
+	border-radius: 20px;
+	color: $modal;
+	padding: 30px;
+}
+
+.modal-heading {
+	font-size: 1.071rem;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	line-height: 1.4;
+}
+
+.modal-fields {
+	padding: 0 0 20px;
+
+	input {
+		display: block;
+		border: none;
+		border-bottom: 1px solid $modal;
+		outline: none;
+		height: 46px;
+		padding: 10px 25px 10px 0;
+		width: 100%;
+		box-sizing: border-box;
+		margin: 20px 0;
+		font-family: inherit;
+	}
+}
+
+.modal-button {
+	background-color: transparent;
+	border: 1px solid $modal;
+	border-radius: 50px;
+	padding: 14px 30px;
+	font-family: inherit;
+	outline: none;
+	cursor: pointer;
+}
+
+.callbackFbox {
+	max-width: 300px;
+
+	.modal-heading {
+		text-align: center;
+	}
+
+	.modal-button {
+		width: 100%;
+	}
+}
+
 /* Header */
-
-
 .menu-burger {
 	display: none;
 }
@@ -182,8 +234,9 @@ section header {
 	color: $menubutton;
 	border: 1px solid currentColor;
 	text-align: center;
-	padding-top: 13.5px;
+	line-height: 42px;
 	box-sizing: border-box;
+
 }
 
 
@@ -192,6 +245,7 @@ section header {
 	height: 100%;
 	text-decoration: none;
 	box-sizing: border-box;
+	outline: none;
 }
 
 .menu-button span {
