@@ -701,7 +701,7 @@ section header {
 	border-top: 2px solid rgba(255, 255, 255, 0.5);
 	border-right: 2px solid rgba(255, 255, 255, 0.5);
 	transform: rotate(45deg);
-	right:0;
+	right:20px;
 	top: calc(50% - 80px);
 }
 
@@ -713,7 +713,7 @@ section header {
 	border-top: 2px solid rgba(255, 255, 255, 0.5);
 	border-left: 2px solid rgba(255, 255, 255, 0.5);
 	transform: rotate(-45deg);
-	left:0;
+	left:20px;
 	top: calc(50% - 80px);
 }
 
