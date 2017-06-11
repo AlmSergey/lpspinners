@@ -76,6 +76,9 @@ body{
 	padding: 70px 0;
 }
 
+section header {
+	padding: 0 20px;
+}
 
 /* Header */
 
@@ -182,12 +185,6 @@ body{
 }
 
 /* Products */
-
-.products {
-	header {
-		padding: 0 20px;
-	}
-}
 
 .product{
 	width: 33.3333333333%;
@@ -456,4 +453,21 @@ body{
 
 .utp2-heading {
 
+}
+
+/* Delivery section */
+.delivery-steps {
+	display: flex;
+	padding: 40px 0;
+}
+
+.delivery-step {
+	width: 25%;
+	text-align: center;
+	padding: 0 20px;
+
+	img {
+		width: 60px;
+		height: 60px;
+	}
 }
