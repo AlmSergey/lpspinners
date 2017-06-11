@@ -213,6 +213,89 @@ section header {
 	overflow: hidden;
 }
 
+.info-holder {
+	height: 78px;
+	position: absolute;
+	right: 25px;
+	z-index: 2;
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: top;
+	padding-top: 10px;
+	color: $menutext;
+
+	.icons {
+		height: 25px;
+		width: 25px;
+		fill: currentColor;
+		margin-left: 20px;
+		opacity: 0.6;
+	}
+
+	.info {
+		margin-right: 25px;
+		padding: 0 15px;
+
+
+
+		span {
+			font-size: 1.07rem;
+			font-weight: 700;
+			line-height: 1.5;
+			letter-spacing: 1.5px;
+
+		}
+
+		p {
+			margin: 0;
+			font-size: .9rem;
+			line-height: 1.2;
+			opacity: .6;
+		}
+	}
+}
+
+.header-desc {
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	width: 100%;
+	max-width: 780px;
+	margin: auto;
+	padding: 70px 0;
+	color: $menutext;
+
+	h1 {
+		font-size: 2.2rem;
+		font-weight: 400;
+		margin: 0 0 30px;
+	}
+
+	p {
+		margin: 0;
+		font-size: 1.071rem;
+		text-transform: uppercase;
+		font-weight: 100;
+		letter-spacing: 1.5px;
+		line-height: 1.4;
+	}
+	&:after {
+		content: '';
+		display: block;
+		margin: 0 auto;
+		width: 30px;
+		height: 2px;
+		background: $menutext;
+		position: relative;
+		top: 20px;
+	}
+}
+	
+
+
+
 /* Products */
 
 .product{
