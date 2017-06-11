@@ -258,14 +258,17 @@ section header {
 }
 
 .header-desc {
-	position: relative;
+
+	color: $menutext;
+	position: absolute;
 	z-index: 2;
 	text-align: center;
 	width: 100%;
 	max-width: 780px;
-	margin: auto;
-	padding: 70px 0;
-	color: $menutext;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	bottom: 67px;
 
 	h1 {
 		font-size: 2.2rem;
