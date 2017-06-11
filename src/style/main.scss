@@ -28,6 +28,7 @@ $text: #222;
 $textinvert: #fff;
 $sectionbg: #000;
 $modal: #191919;
+$utp3text: #212121;
 
 /* Mixins */
 @mixin respond-to($media) {
@@ -246,6 +247,9 @@ section header {
 	flex-shrink: 0;
 }
 
+.menu-holder {
+}
+
 .menu-holder ul:hover li{
 	opacity: 0.5;
 }
@@ -260,11 +264,13 @@ section header {
 	text-decoration: none;
 	opacity: 0.8;
 	font-size: .857rem;
+	font-weight: 600;
+	letter-spacing: 1.2px;
 }
 
 .menu-holder li {
 	display: inline-block;
-	padding: 0 25px;
+	padding: 5px 15px;
 	transition: opacity .5s ease;
 }
 
@@ -361,8 +367,6 @@ section header {
 }
 
 .header-desc {
-
-	color: $menutext;
 	position: absolute;
 	z-index: 2;
 	text-align: center;
@@ -371,7 +375,9 @@ section header {
 	margin: 0 auto;
 	left: 0;
 	right: 0;
-	bottom: 67px;
+	bottom: 40px;
+	color: $menutext;
+	padding: 0 20px;
 
 	h1 {
 		font-size: 2.2rem;
@@ -387,15 +393,12 @@ section header {
 		letter-spacing: 1.5px;
 		line-height: 1.4;
 	}
-	&:after {
-		content: '';
-		display: block;
-		margin: 0 auto;
-		width: 30px;
-		height: 2px;
-		background: $menutext;
-		position: relative;
-		top: 20px;
+	.spinner-icon {
+		display: inline-block;
+		height: 32px;
+		width: 32px;
+		fill: currentColor;
+		margin-top: 30px;
 	}
 }
 	
@@ -573,14 +576,17 @@ section header {
 
 /* UTP section */
 
-.utp-holder {
+.textblock-holder {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+}
+
+.utp.text-block-holder {
 	padding-top: 30px;
 }
 
-.utp-block {
+.textblock {
 	width: 33.33333333%;
 	padding: 0 10px;
 	box-sizing: border-box;
@@ -594,20 +600,6 @@ section header {
 
 		&:last-of-type{
 			margin: 0 auto 0;
-		}
-	}
-
-	&:after {
-		content: '';
-		width: calc(100% - 90px);
-		height: 1px;
-		position: absolute;
-		top: 45px;
-		left: calc(50% - -45px);
-		background-color: $decorbg;
-
-		@include respond-to(tablets){
-			display: none;
 		}
 	}
 
@@ -644,10 +636,27 @@ section header {
 		color: rgba(33,33,33,0.8);
 
 	}
+
 }
 
 
-/* Indent section */
+.lines {
+		&:after {
+		content: '';
+		width: calc(100% - 90px);
+		height: 1px;
+		position: absolute;
+		top: 45px;
+		left: calc(50% - -45px);
+		background-color: $decorbg;
+
+		@include respond-to(tablets){
+			display: none;
+		}
+	}
+}
+
+/* Utp2 section */
 
 .utp2 {
 	width: 100%;
@@ -845,3 +854,22 @@ section header {
 	}
 }
 
+/* Section Utp3 */
+
+.utp3_desc {
+	margin: 0 auto 30px;
+	width: 100%;
+	max-width: 820px;
+	text-align: center;
+	color: $decorbg;
+	font-size: 1.071rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	box-sizing: border-box;
+	letter-spacing: 1.5px;
+	line-height: 1.4;
+}
+
+.utp3 span {
+	color: $utp3text !important; 
+}
