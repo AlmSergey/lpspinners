@@ -82,6 +82,10 @@ $( document ).ready(function() {
         }
     });
 
+    $(window).resize(function () {
+        $("#player").css("height", window.innerWidth / 16 * 9 );
+    });
+
 
 
     $('#reviews-slider').slick({
