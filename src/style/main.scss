@@ -657,6 +657,10 @@ section header {
 .reviews-holder {
 	margin: 50px 0 0;
 	padding: 0 50px;
+	@include respond-to(largephone) {
+		padding: 0 20px;
+		margin: 30px 0 0;
+	}
 }
 
 .review {
@@ -676,13 +680,18 @@ section header {
 		}
 
 		span{
-			padding-left: 15px;
+			padding: 0 0 0 15px;
 			vertical-align: middle;
 			font-weight: 700;
 			font-size: .857rem;
 			line-height: 1.333;
 			letter-spacing: 1.2px;
 			text-transform: uppercase;
+
+			@include respond-to(largephone) {
+				display: block;
+				padding: 15px 0 0 0;
+			}
 		}
 	}
 
@@ -690,6 +699,10 @@ section header {
 		font-size: 2rem;
 		line-height: 1.8;
 		font-weight: 700;
+
+		@include respond-to(largephone) {
+			font-size: 1.5rem;
+		}
 	}
 }
 
@@ -702,7 +715,13 @@ section header {
 	border-right: 2px solid rgba(255, 255, 255, 0.5);
 	transform: rotate(45deg);
 	right:20px;
-	top: calc(50% - 80px);
+	top: calc(50% - 60px);
+
+	@include respond-to(largephone) {
+		right: 5px;
+		width:20px;
+		height: 20px;
+	}
 }
 
 .slick-prev {
@@ -714,6 +733,12 @@ section header {
 	border-left: 2px solid rgba(255, 255, 255, 0.5);
 	transform: rotate(-45deg);
 	left:20px;
-	top: calc(50% - 80px);
+	top: calc(50% - 60px);
+
+	@include respond-to(largephone) {
+		left: 5px;
+		width:20px;
+		height: 20px;
+	}
 }
 
