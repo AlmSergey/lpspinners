@@ -80,6 +80,23 @@ section header {
 	padding: 0 20px;
 }
 
+.textlist {
+	margin-top: 30px;
+	padding: 0 20px;
+}
+
+.textlist span {
+	text-transform: uppercase;
+	font-size: 1.143rem;
+	font-weight: 700;
+}
+
+.textlist p {
+	text-align: justify;
+	font-weight: 300;
+	line-height: 1.5;
+}
+
 /* Header */
 
 
@@ -426,7 +443,6 @@ section header {
 /* Indent section */
 
 .utp2 {
-	height: 715px;
 	width: 100%;
 	background: url(../img/utp2_bg.jpg) no-repeat;
 	background-size: cover;
@@ -477,39 +493,48 @@ section header {
 	margin: 0 auto;
 	padding-top: 50px;
 	text-align: left;
+
+	.textlist p {
+		color: rgba(255,255,255,0.8);
+	}
 }
 
-.textlist {
-	margin-top: 30px;
-	padding: 0 20px;
-}
 
-.textlist span {
-	text-transform: uppercase;
-	font-size: 1.143rem;
-	font-weight: 700;
-}
-
-.textlist p {
-	text-align: justify;
-	font-weight: 300;
-	line-height: 1.5;
-	color: rgba(255,255,255,0.8);
-}
 
 /* Delivery section */
 .delivery-steps {
 	display: flex;
-	padding: 40px 0;
+	flex-wrap: wrap;
+	padding: 50px 0 10px;
+
+	@include respond-to(largephone) {
+		padding: 30px 0 10px;
+	}
 }
 
 .delivery-step {
 	width: 25%;
 	text-align: center;
-	padding: 0 20px;
+	padding: 0 40px;
+	box-sizing: border-box;
+
+	@include respond-to(largetablets) {
+		padding: 0 20px;
+	}
+
+	@include respond-to(tablets) {
+		width: 50%;
+		padding: 10px 60px;
+	}
+
+	@include respond-to(largephone) {
+		width: 100%;
+		padding: 20px 50px;
+	}
 
 	img {
 		width: 60px;
 		height: 60px;
 	}
 }
+
