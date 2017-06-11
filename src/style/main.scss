@@ -608,9 +608,7 @@ section header {
 		}
 	}
 
-	&:last-of-type:after{
-		display: none;
-	}
+	
 
 	&_img {
 		margin: 0 auto 10px;
@@ -658,6 +656,10 @@ section header {
 		@include respond-to(tablets){
 			display: none;
 		}
+	}
+
+	&:last-of-type:after{
+		display: none;
 	}
 }
 
