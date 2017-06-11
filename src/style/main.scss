@@ -76,6 +76,26 @@ body{
 	padding: 70px 0;
 }
 
+section header {
+	padding: 0 20px;
+}
+
+.textlist {
+	margin-top: 30px;
+	padding: 0 20px;
+}
+
+.textlist span {
+	text-transform: uppercase;
+	font-size: 1.143rem;
+	font-weight: 700;
+}
+
+.textlist p {
+	text-align: justify;
+	font-weight: 300;
+	line-height: 1.5;
+}
 
 /* Header */
 
@@ -187,16 +207,18 @@ body{
 	align-items: top;
 	padding-top: 10px;
 	color: $menutext;
-	
-	img {
-		display: inline-block;
+
+	.icons {
 		height: 25px;
 		width: 25px;
 		fill: currentColor;
+		margin-left: 20px;
+		opacity: 0.6;
 	}
 
 	.info {
-		padding: 0 25px;
+		margin-right: 25px;
+		padding: 0 15px;
 
 
 
@@ -218,12 +240,6 @@ body{
 }
 
 /* Products */
-
-.products {
-	header {
-		padding: 0 20px;
-	}
-}
 
 .product{
 	width: 33.3333333333%;
@@ -340,9 +356,9 @@ body{
 
 
 	&_gif {
-		background: url(../img/hand-spinner.gif) no-repeat;
+		background: url(../img/hand-spinner.gif) no-repeat center ;
 		display: inline-block;
-		height: 300px;
+		height: 361px;
 		background-size: contain;
 		vertical-align: top;
 		width: 100%;
@@ -471,7 +487,6 @@ body{
 /* Indent section */
 
 .utp2 {
-	height: 715px;
 	width: 100%;
 	background: url(../img/utp2_bg.jpg) no-repeat;
 	background-size: cover;
@@ -522,22 +537,48 @@ body{
 	margin: 0 auto;
 	padding-top: 50px;
 	text-align: left;
+
+	.textlist p {
+		color: rgba(255,255,255,0.8);
+	}
 }
 
-.textlist {
-	margin-top: 30px;
-	padding: 0 20px;
+
+
+/* Delivery section */
+.delivery-steps {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 50px 0 10px;
+
+	@include respond-to(largephone) {
+		padding: 30px 0 10px;
+	}
 }
 
-.textlist span {
-	text-transform: uppercase;
-	font-size: 1.143rem;
-	font-weight: 700;
+.delivery-step {
+	width: 25%;
+	text-align: center;
+	padding: 0 40px;
+	box-sizing: border-box;
+
+	@include respond-to(largetablets) {
+		padding: 0 20px;
+	}
+
+	@include respond-to(tablets) {
+		width: 50%;
+		padding: 10px 60px;
+	}
+
+	@include respond-to(largephone) {
+		width: 100%;
+		padding: 20px 50px;
+	}
+
+	img {
+		width: 60px;
+		height: 60px;
+	}
 }
 
-.textlist p {
-	text-align: justify;
-	font-weight: 300;
-	line-height: 1.5;
-	color: rgba(255,255,255,0.8);
-}
