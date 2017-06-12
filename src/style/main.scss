@@ -202,33 +202,6 @@ section header {
 	max-width: 300px;
 	position: relative;
 
-	&_succes{
-		display: none;
-		width:100%;
-		height: 100%;
-		position: absolute;
-		text-align: center;
-		background-color: #fff;
-		top: 0;
-		left:0;
-
-		&_heading {
-			font-weight: 700;
-		}
-
-		&-holder{
-			font-size: 1.4rem;
-			height: 138px;
-			top: calc(50% - 69px);
-			position: relative;
-
-			p {
-				font-size: 1.2rem;
-				line-height: 1.5;
-			}
-		}
-	}
-
 	.modal-heading {
 		text-align: center;
 	}
@@ -238,12 +211,129 @@ section header {
 	}
 }
 
+.succes{
+	display: none;
+	width:100%;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	background-color: #fff;
+	top: 0;
+	left:0;
+
+	&_heading {
+		font-weight: 700;
+	}
+
+	&-holder{
+		font-size: 1.4rem;
+		height: 138px;
+		top: calc(50% - 69px);
+		position: relative;
+
+		p {
+			font-size: 1.2rem;
+			line-height: 1.5;
+		}
+	}
+}
+
+.order-products {
+	margin: 20px 0;
+	position: relative;
+	max-height: 210px;
+	overflow: auto;
+}
+
+.order-product {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 70px;
+	padding: 5px 0;
+	border-bottom: 1px solid #cecece;
+
+	&:last-of-type {
+		border-bottom: none;
+	}
+
+	&:hover .remove{
+	/*	visibility: visible; */
+	}
+
+	&_img {
+		height: 100%;
+
+		img{
+			height: 100%;
+		}
+	}
+
+	&_counter {
+
+		.arrow {
+			width: 8px;
+			height: 8px;
+			border-top:2px solid #6b6b6b;
+			border-right: 2px solid #6b6b6b;
+			margin: 0 auto;
+			cursor: pointer;
+		}
+
+		.less {
+			transform: rotate(-45deg);
+		}
+
+		.more {
+			transform: rotate(135deg);
+		}
+
+		.quantity {
+			padding: 5px 0 3px;
+			text-align: center;
+		}
+	}
+
+	.remove{
+		visibility: hidden;
+		cursor: pointer;
+		position: absolute;
+		right: 0;
+
+		svg {
+			fill: $text;
+			width: 20px;
+		}
+	}
+
+	&_title {
+		max-width: 40%;
+		line-height: 1.4;
+		text-align: center;
+	}
+
+	&_price {
+		margin-right: 25px;
+	}
+}
+
+.order-total {
+	margin: 10px 0;
+	text-align: right;
+
+	&_text {
+		font-weight: bold;
+		font-size: 1.1rem;
+		padding-right: 20px;
+	}
+}
+
+
 /* Header */
-
-
 .menu-burger {
 	display: none;
 	position: fixed;
+	top: calc(97px / 2 - 17px);
 	right: 50px;
 	background: url(../img/burger.svg) no-repeat, #000;
 	background-size: 71%;
@@ -254,6 +344,7 @@ section header {
 	border-radius: 50%;
 	z-index: 9999999;
 	outline: none;
+	-webkit-backface-visibility: hidden; //stop flickering when transform animating
 
 	@include respond-to(tablets) {
 		display: block;
@@ -547,12 +638,17 @@ section header {
 		padding: 20px;
 	}
 
+	&:empty {
+		padding: 0;
+	}
+
 	&_img-holder {
 		transition: transform .5s ease;
 
 		img {
-			width: 100%;
-			height: auto;
+			width: auto;
+			height: 252px;
+			max-width: 100%;
 		}
 
 		&:hover {
@@ -568,19 +664,22 @@ section header {
 		font-size: 1.143em;
 		line-height: 1.188;
 		margin: 0;
+		height: 70px;
 	}
 
 	p {
 		opacity: .75;
-		margin:20px 0 10px;
+		margin:0 0 10px;
 		font-size: .929rem;
 		line-height: 1.692;
+		height: 190px;
+
 	}
 
 	&_buy-holder {
 		margin-top: 15px;
 
-		button{
+		a {
 			background-color: transparent;
 			border: 1px solid $decorbg;
 			padding: 12px 28px;
@@ -589,6 +688,9 @@ section header {
 			outline: none;
 			cursor: pointer;
 			margin: 10px 0;
+			text-decoration: none;
+			color: inherit;
+			display: inline-block;
 		}
 	}
 
@@ -914,6 +1016,10 @@ section header {
 			overflow: hidden;
 			display: inline-block;
 			vertical-align: middle;
+
+			img {
+				width: 100%;
+			}
 		}
 
 		span{

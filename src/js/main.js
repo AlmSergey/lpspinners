@@ -88,7 +88,7 @@ $( document ).ready(function() {
        }
    }
 
-
+    floatMenu();
 
     $(window).resize(function () {
         $("#player").css("height", window.innerWidth / 16 * 9 );
@@ -136,7 +136,8 @@ $( document ).ready(function() {
                 url: '../callback.php',
                 data: fields,
                 success: function (data) {
-                    $(".callbackFbox_succes").show();
+                    $("#callbackFbox .succes").show();
+                    $("#senderName").text(fields.name)
                 }
             });
         }
@@ -146,4 +147,132 @@ $( document ).ready(function() {
 
 
     $("input[type=phone]").mask('+38(999)999-99-99',{placeholder:"+38(___)___-__-__"});
+
+    var cart = {};
+    var total = 0;
+
+    function totalCount() {
+        total = 0;
+        $.each(cart, function (i,v) {
+
+
+            total = total + +v.price * +v.quantity;
+        });
+        $(".order-total_price").text(total + ' грн');
+    }
+
+    $(".addtocart").click(function() {
+        var product = $(this).parent().parent();
+
+        if (cart[product.attr("id")] !== undefined) {
+            $("#cart").find('#'+ product.attr("id")).find(".more").trigger('click');
+        } else {
+
+        var productFields = {
+            title: product.find('h4').text(),
+            img: product.find(".product_img-holder a").html(),
+            price: product.find(".product_price span").text(),
+            quantity: 1
+        };
+
+        cart[product.attr("id")] = productFields;
+
+
+        $("#cart").append('' +
+            '<div class="order-product" id="' + product.attr("id") + '">' +
+            '<div class="order-product_img">' +
+            productFields.img +
+            '</div>' +
+            '<div class="order-product_title">' + productFields.title + '</div>' +
+            '<div class="order-product_counter">' +
+            '<div class="less arrow"></div>' +
+            '<div class="quantity">1</div>' +
+            '<div class="more arrow"></div>' +
+            '</div>' +
+            '<div class="order-product_price">' + productFields.price + '</div>' +
+            '<div class="remove">' +
+            '<svg viewBox="0 0 11 12"><path d="M2.5 12h6c.825 0 1.5-.58 1.5-1.286V3H1v7.714C1 11.42 1.675 12 2.5 12zm.667-1h4.666C8.475 11 9 10.55 9 10V3H2v7c0 .55.525 1 1.167 1zM8 1L7 0H4L3 1h5zM3 3h1v7H3V3zm2 0h1v7H5V3zm2 0h1v7H7V3zM0 1.5c0-.276.23-.5.5-.5h10c.276 0 .5.232.5.5V2H0v-.5z" fill-rule="evenodd"></path></svg>' +
+            '</div></div>');
+
+        $(".less").click(function () {
+            var quant = $(this).parent().find(".quantity");
+            if (quant.text() == 1) {
+                return false;
+            } else {
+                quant.text(+quant.text() - 1);
+            }
+            cart['' + $(this).parent().parent().attr("id") + ''].quantity--;
+            console.log(cart);
+            totalCount();
+        });
+
+        $(".more").click(function () {
+            var quant = $(this).parent().find(".quantity");
+            quant.text(+quant.text() + 1);
+            cart['' + $(this).parent().parent().attr("id") + ''].quantity++;
+            console.log(cart);
+            totalCount();
+        });
+
+            totalCount();
+
+
+        }
+    });
+
+    $('#orderSend').click(function() {
+
+        var order = '';
+        $.each(cart, function (i,v) {
+            order += v.title + ' (' + v.quantity + ')<br>'
+        });
+
+        var fields = {
+            phone: $('#orderPhone').val(),
+            name: $('#orderName').val(),
+            order: order
+        };
+
+        var error = false;
+
+        console.log(fields.phone);
+        console.log(fields.name);
+
+        if( fields.phone === '') {
+            $('#orderPhone').addClass('error');
+            error = true;
+        }
+
+        if( fields.name === '') {
+            $('#orderName').addClass('error');
+            error = true;
+        }
+
+        if (!error) {
+            jQuery.ajax({
+                url: '../callback.php',
+                data: fields,
+                success: function (data) {
+                    $("#orderFbox .succes").show();
+                    $("#clientName").text(fields.name);
+                }
+            });
+        }
+
+
+    });
+
+    $("#orderBuymore").click(function () {
+        $.fancybox.close('all');
+    });
+
+    $(".menu-holder a, .footer-menu-holder a").click(function (e) {
+        e.preventDefault();
+
+        var target = $(this).attr("href");
+        var body = $("html, body");
+        $.fancybox.close('all');
+        body.stop().animate({scrollTop: $(target).offset().top-70+'px'});
+
+    })
 });
