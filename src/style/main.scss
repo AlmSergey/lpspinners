@@ -170,6 +170,34 @@ section header {
 	cursor: pointer;
 }
 
+.mobileMenu {
+	background-color: $headerbg;
+	border-radius: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+
+	.menu-holder {
+		display: block;
+		text-align: center;
+
+		li{
+			display: block;
+			padding: 10px;
+
+			a {
+				font-size: 1.3rem;
+				outline: none;
+			}
+		}
+	}
+
+	.menu-button {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
 .callbackFbox {
 	max-width: 300px;
 	position: relative;
@@ -215,6 +243,21 @@ section header {
 
 .menu-burger {
 	display: none;
+	position: fixed;
+	right: 50px;
+	background: url(../img/burger.svg) no-repeat, #000;
+	background-size: 71%;
+	background-position: center;
+	height: 35px;
+	width: 35px;
+	cursor: pointer;
+	border-radius: 50%;
+	z-index: 9999999;
+	outline: none;
+
+	@include respond-to(tablets) {
+		display: block;
+	}
 }
 
 .menu-filler {
@@ -249,32 +292,39 @@ section header {
 	flex-shrink: 0;
 }
 
-.menu-holder ul:hover li{
-	opacity: 0.5;
-}
+.menu-holder {
 
-.menu-holder ul {
-	padding-left: 0;
-}
+	a {
+		color: $menutext;
+		text-transform: uppercase;
+		text-decoration: none;
+		opacity: 0.8;
+		font-size: .857rem;
+		font-weight: 600;
+		letter-spacing: 1.2px;
+	}
 
-.menu-holder a {
-	color: $menutext;
-	text-transform: uppercase;
-	text-decoration: none;
-	opacity: 0.8;
-	font-size: .857rem;
-	font-weight: 600;
-	letter-spacing: 1.2px;
-}
+	ul {
+		padding-left: 0;
 
-.menu-holder li {
-	display: inline-block;
-	padding: 5px 15px;
-	transition: opacity .5s ease;
-}
+		&:hover li{
+			opacity: 0.5;
+		}
+	}
 
-.menu-holder li:hover {
-	opacity: 1 !important;
+	li {
+		display: inline-block;
+		padding: 5px 15px;
+		transition: opacity .5s ease;
+
+		&:hover {
+			opacity: 1 !important;
+		}
+	}
+
+	@include respond-to(tablets) {
+		display: none;
+	}
 }
 
 .menu-button {
@@ -286,20 +336,25 @@ section header {
 	line-height: 42px;
 	box-sizing: border-box;
 
+	a {
+		display: block;
+		height: 100%;
+		text-decoration: none;
+		box-sizing: border-box;
+		outline: none;
+	}
+
+	span {
+		color: $menubutton;
+	}
+
+	@include respond-to(tablets) {
+		display: none;
+	}
+
 }
 
 
-.menu-button a {
-	display: block;
-	height: 100%;
-	text-decoration: none;
-	box-sizing: border-box;
-	outline: none;
-}
-
-.menu-button span {
-	color: $menubutton;
-}
 
 .videobg {
 	top: -60px;
