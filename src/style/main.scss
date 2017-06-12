@@ -305,6 +305,25 @@ section header {
 	top: -60px;
 	position: absolute;
 	z-index: -1;
+
+	@include respond-to(largetablets){
+		display: none;
+	}
+}
+
+.player-img {
+	background: url(https://img.youtube.com/vi/ylN_btHE_zo/maxresdefault.jpg) no-repeat;
+	background-size: cover;
+	height: 100%;
+	display: none;
+	position: absolute;
+	z-index: -1;
+
+	@include respond-to(largetablets){
+		display: block;
+		width: 100%;
+	}
+
 }
 
 .header_overlay {
@@ -313,7 +332,20 @@ section header {
 	position: absolute;
 	background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.83) 10%, transparent 140%);
 	z-index: 1;
+
+	@include respond-to(largetablets){
+		height: (570px - 97px);
+	}
+
+	@include respond-to(tablets){
+		height: (650px - 97px);
+	}
+
+	@include respond-to(largephone){
+		height: (800px - 97px );
+	}
 }
+
 
 .header {
 	height: 100vh;
@@ -322,7 +354,16 @@ section header {
 	max-height: calc(100vw / 16 *9 - 120px);
 
 	@include respond-to(largetablets){
-		max-height: calc(100vw / 16 *9 + 100px);
+		height: 570px;
+		max-height: none;
+	}
+
+	@include respond-to(tablets){
+		 height: 650px;
+	}
+
+	@include respond-to(largephone){
+		height: 800px;
 	}
 }
 
@@ -335,9 +376,13 @@ section header {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	align-items: top;
 	padding-top: 10px;
 	color: $menutext;
+
+	@include respond-to(tablets){
+		width: 295px;
+		flex-wrap: wrap;
+	}
 
 	.icons {
 		height: 25px;
@@ -370,6 +415,14 @@ section header {
 	}
 }
 
+.info.item2, .icons.phone{
+	@include respond-to(tablets){
+		margin-top: 20px;
+	}
+}
+
+
+
 .header-desc {
 	position: absolute;
 	z-index: 2;
@@ -382,6 +435,7 @@ section header {
 	bottom: 40px;
 	color: $menutext;
 	padding: 0 20px;
+	box-sizing: border-box;
 
 	h1 {
 		font-size: 2.2rem;
