@@ -342,7 +342,7 @@ section header {
 	width: 35px;
 	cursor: pointer;
 	border-radius: 50%;
-	z-index: 9999999;
+	z-index: 9999;
 	outline: none;
 	-webkit-backface-visibility: hidden; //stop flickering when transform animating
 
@@ -480,12 +480,14 @@ section header {
 	z-index: 1;
 
 	@include respond-to(largetablets){
-		height: (570px - 97px);
+		 height: (570px - 97px);
+	 }
+
+	@include respond-to(largephone){
+		height: 100%;
 	}
 
-	@include respond-to(tablets){
-		height: auto;
-	}
+
 }
 
 
