@@ -717,6 +717,10 @@ section header {
 	line-height: 1.1;
 	text-align: center;
 	margin: 0 auto 20px;
+
+	@include respond-to(smallphone) {
+		font-size: 2.5rem;
+	}
 }
 
 .sect-desc {

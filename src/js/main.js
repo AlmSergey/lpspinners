@@ -146,7 +146,7 @@ $( document ).ready(function() {
     });
 
 
-    $("input[type=phone]").mask('+38(999)999-99-99',{placeholder:"+38(___)___-__-__"});
+   // $("input[type=phone]").mask('+38(999)999-99-99',{placeholder:"+38(___)___-__-__"});
 
     var cart = {};
     var total = 0;
@@ -250,7 +250,7 @@ $( document ).ready(function() {
 
         if (!error) {
             jQuery.ajax({
-                url: '../callback.php',
+                url: '../order.php',
                 data: fields,
                 success: function (data) {
                     $("#orderFbox .succes").show();
