@@ -114,6 +114,11 @@ section header {
 }
 
 /* Modals */
+.fancybox-toolbar { // For showing close button always
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
 .modal {
 	border-radius: 20px;
 	color: $modal;
@@ -241,7 +246,7 @@ section header {
 .order-products {
 	margin: 20px 0;
 	position: relative;
-	max-height: 210px;
+	max-height: 190px;
 	overflow: auto;
 }
 
@@ -433,11 +438,9 @@ section header {
 		text-decoration: none;
 		box-sizing: border-box;
 		outline: none;
-	}
-
-	span {
 		color: $menubutton;
 	}
+
 
 	@include respond-to(tablets) {
 		display: none;
@@ -718,7 +721,7 @@ section header {
 	text-align: center;
 	margin: 0 auto 20px;
 
-	@include respond-to(smallphone) {
+	@include respond-to(largephone) {
 		font-size: 2.5rem;
 	}
 }
