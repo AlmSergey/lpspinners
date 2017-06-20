@@ -1144,7 +1144,6 @@ section header {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	align-items: top;
 	justify-content: space-between;
 
 	@include respond-to(tablets) {
@@ -1168,19 +1167,18 @@ section header {
 }
 
 .footer-menu-holder {
-	padding-left: 30px;
-	flex-grow: 1;
-	max-width: 480px;
+	padding: 0 32px;
+	width: 100%;
+	max-width: 313px;
 	min-height: 46px;
 	text-transform: uppercase;
 	text-align: left;
-	box-sizing: border-box;
+	box-sizing: content-box;
 	flex-shrink: 0;
-
+	margin-top: -10px;
 
 	@include respond-to(tablets) {
 		margin-top: 20px;
-		padding-left: 15px;
 		text-align: center;
 	}
 
@@ -1191,6 +1189,7 @@ section header {
 	height: 100%;
 	box-sizing: border-box;
 	margin: 0;
+	padding: 0;
 
 	@include respond-to(tablets) {
 		padding-left: 0;
@@ -1203,8 +1202,8 @@ section header {
 	width: 50%;
 	height: auto;
 	box-sizing: border-box;
-	padding: 10px;
-	padding-left: 0;
+	padding: 10px 0;
+
 	transition: opacity .5s ease;
 
 	@include respond-to(tablets) {
@@ -1238,25 +1237,22 @@ section header {
 
 .footer-info-holder {
 	display: flex;
-	align-items: top;
-	width: 370px;
-	flex-shrink: 0;
+	flex-wrap: wrap;
+	margin-right: 50px;
 
 	@include respond-to(tablets) {
 		flex-direction: column;
-		width: 160px;
 		align-items: center;
+		margin-right: 0;
 	}
 	
 	.info-item {
-		max-width: 160px;
-		padding-left: 30px;
+		padding-right: 30px;
 		text-align: left;
 
 		@include respond-to(tablets) {
 			text-align: center;
-			padding-left: 0;
-			padding-top: 20px;
+			padding: 20px 0 0;
 		}	
 
 		span {

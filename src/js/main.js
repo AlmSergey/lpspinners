@@ -84,7 +84,9 @@ $( document ).ready(function() {
                }
            });
        } else {
-           $(window).off('scroll');
+           $(window).unbind("scroll");
+           $("#menu").css("position","static");
+           $(".menu-filler").hide();
        }
    }
 
@@ -274,5 +276,9 @@ $( document ).ready(function() {
         $.fancybox.close('all');
         body.stop().animate({scrollTop: $(target).offset().top-70+'px'});
 
+    });
+
+    $(".product_img-holder a").click(function (e) {
+        e.preventDefault();
     })
 });
